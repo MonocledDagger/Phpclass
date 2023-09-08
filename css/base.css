@@ -20,6 +20,11 @@ main{
     text-align: center;
 
 }
+
+main h1{
+    text-align: center;
+}
+
 main img{
     width:250px;
     display:block;

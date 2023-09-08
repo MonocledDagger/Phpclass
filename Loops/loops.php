@@ -20,7 +20,7 @@
 
 $number = 100;
 
-echo("<p>".$number."</p>");
+echo("<h1>".$number."</h1>");
 
     ?>
 </main>
