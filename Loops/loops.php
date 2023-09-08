@@ -16,7 +16,13 @@
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
+    <?php
 
+$number = 100;
+
+echo("<h1>".$number."</h1>");
+
+    ?>
 </main>
 <footer>
     <?php include '../Includes/footer.php'?>
