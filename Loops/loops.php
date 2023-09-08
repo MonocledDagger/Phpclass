@@ -25,7 +25,7 @@ echo("<h1>".$number."</h1>");
 
     $i = 1;
 while($i < 7){
-    echo "<h1>Hello World</h1>";
+    echo "<h$i>Hello World</h$i>";
     $i++;}
     ?>
 </main>
