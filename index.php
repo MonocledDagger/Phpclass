@@ -10,10 +10,10 @@
 </head>
 <body>
 <header>
-    <?php include 'includes/Header.php'?>
+    <?php include 'Includes/Header.php'?>
 </header>
 <nav>
-<?php include 'includes/nav.php' ?>
+<?php include 'Includes/nav.php' ?>
 </nav>
 <main>
     <p> Jimmy is a pretty cool guy. Here's a picture of him</p>
@@ -26,7 +26,7 @@
     <p>In his off time, Jimmy plays video games, watches Let's plays, reads comic books and is currently learning to code.</p>
 </main>
 <footer>
-    <p>&copy; 2023 Jimmy Dictus</p>
+<?php include 'Includes/footer.php'?>
 
 </footer>
 </body>
