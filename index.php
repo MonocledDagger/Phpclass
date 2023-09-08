@@ -10,15 +10,10 @@
 </head>
 <body>
 <header>
-    <h1>PHP Class - Jimmy's Website</h1>
+    <?php include 'includes/Header.php'?>
 </header>
 <nav>
-    <ul>
-        <li><a href="/">Homepage</a></li>
-        <li><a href="/">Loop</a></li>
-        <li><a href="/">Countdown</a></li>
-        <li><a href="/">Other</a></li>
-    </ul>
+<?php include 'includes/nav.php' ?>
 </nav>
 <main>
     <p> Jimmy is a pretty cool guy. Here's a picture of him</p>
@@ -28,7 +23,7 @@
 
     <br>
 
-    <p>In his off time,Jimmy plays video games, watches Let's plays, reads comic books and is currently learning to code.</p>
+    <p>In his off time, Jimmy plays video games, watches Let's plays, reads comic books and is currently learning to code.</p>
 </main>
 <footer>
     <p>&copy; 2023 Jimmy Dictus</p>
