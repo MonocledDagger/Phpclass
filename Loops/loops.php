@@ -27,6 +27,11 @@ echo("<h1>".$number."</h1>");
 while($i < 7){
     echo "<h$i>Hello World</h$i>";
     $i++;}
+
+$i = 6;
+    while($i < 0){
+        echo "<h$i>Goodbye World</h$i>";
+        $i--;}
     ?>
 </main>
 <footer>
