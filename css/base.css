@@ -17,13 +17,14 @@ main{
     width: 60%;
     float: left;
     font-size: large;
+    text-align: center;
 
 }
 main img{
     width:250px;
     display:block;
     margin: 0 auto;
-    text-align: center;
+
 }
 
 main p{
