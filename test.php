@@ -41,7 +41,7 @@ if($question="") {
     $answer = $responses[$iResponse];
     $_SESSION["PrevQuest"] = $question;
 }
-exit();
+
 
 
 
