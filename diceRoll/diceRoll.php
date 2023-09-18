@@ -11,39 +11,39 @@ $cRollTwo = mt_rand(1,6);
 $cRollThree = mt_rand(1,6);
 
 if ($pRollOne == 1){
-$imgOne = "../DiceOne.png";
+$imgOne = "../images/DiceOne.png";
 }
 elseif ($pRollOne == 2){
-    $imgOne = "../DiceTwo.png";
+    $imgOne = "../images/DiceTwo.png";
 }
 
 elseif ($pRollOne == 3){
-    $imgOne = "../DiceThree.png";
+    $imgOne = "../images/DiceThree.png";
 }
 elseif ($pRollOne == 4){
-    $imgOne = "../DiceFour.png";
+    $imgOne = "../images/DiceFour.png";
 }elseif ($pRollOne == 5){
-    $imgOne = "../DiceFive.png";
+    $imgOne = "../images/DiceFive.png";
 }else{
-    $imgOne = "../DiceSix.png";
+    $imgOne = "../images/DiceSix.png";
 }
 
 if ($pRollTwo == 1){
-    $imgTwo = "../DiceOne.png";
+    $imgTwo = "../images/DiceOne.png";
 }
 elseif ($pRollTwo == 2){
-    $imgTwo = "../DiceTwo.png";
+    $imgTwo = "../images/DiceTwo.png";
 }
 
 elseif ($pRollTwo == 3){
-    $imgTwo = "../DiceThree.png";
+    $imgTwo = "../images/DiceThree.png";
 }
 elseif ($pRollTwo == 4){
-    $imgTwo = "../DiceFour.png";
+    $imgTwo = "../images/DiceFour.png";
 }elseif ($pRollTwo == 5){
-    $imgTwo = "../DiceFive.png";
+    $imgTwo = "../images/DiceFive.png";
 }else{
-    $imgTwo = "../DiceSix.png";
+    $imgTwo = "../images/DiceSix.png";
 }
 
 
@@ -83,9 +83,9 @@ if ($playerResult > $compResult){
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
-<? $imgOne?>
+    <img src="<?=$imgOne?>" alt="Dice Roll">
 
-<? $imgTwo?>
+
 </main>
 <footer>
     <?php include '../Includes/footer.php'?>
