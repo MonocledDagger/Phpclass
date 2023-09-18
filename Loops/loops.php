@@ -29,9 +29,45 @@ while($i < 7){
     $i++;}
 
 $i = 6;
-    while($i < 0){
-        echo "<h$i>Goodbye World</h$i>";
-        $i--;}
+do{
+    echo "<h$i>Goodbye World</h$i>";
+    $i--;
+}while($i > 0);
+
+    for($i=1; $i<7;$i++){
+        echo "<h$i>Hello Again</h$i>";
+
+    };
+
+    echo "<br /> <br /><hr /> <br />";
+
+    $full_name = "Doug Smith";
+    $position = strpos($full_name," ");
+    echo $position;
+
+    echo "<br /> <br /><hr /> <br />";
+
+    echo $full_name;
+    echo "<br />";
+
+    $full_name = strtoupper($full_name);
+    echo $full_name;
+
+    echo "<br /> <br /><hr /> <br />";
+
+    echo $full_name;
+    echo "<br />";
+
+    $full_name = strtolower($full_name);
+    echo $full_name;
+
+    echo "<br /> <br /><hr /> <br />";
+
+    $nameParts = explode(' ',$full_name);
+    echo $nameParts[0];
+    echo "<br />";
+    echo $nameParts[1];
+    echo "<br /> <br /><hr /> <br />";
     ?>
 </main>
 <footer>
