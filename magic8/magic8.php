@@ -63,11 +63,11 @@ session_start();
 <main>
     <h2>Magic 8 Ball~!</h2>
     <br />
-    <marquee><?=$answer?>></marquee>
+    <marquee><?=$answer?></marquee>
     <br />
     <p>Ask A Question:<br />
     <form method="post" action="magic8.php">
-        <input type="text" name="txtQuestion" id="txtQuestion" value=<?$question?>></p>
+        <input type="text" name="txtQuestion" id="txtQuestion" value="<?=$question?>"></p>
         <input type ="Submit" value="Ask the 8-Ball">
     </form>
 </main>
