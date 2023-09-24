@@ -21,9 +21,10 @@
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
-    <h3>My Movie List</h3>
+    <h3>My Movie List</h3
+
     <?php
-    $dsn = 'mysql:host=10.4.113.177;dbname=PHPclass';
+   /* $dsn = 'mysql:host=10.4.113.177;dbname=PHPclass';
     $username = 'dbuser';
     $password = 'dbdev123';
     $options = array(
@@ -41,7 +42,7 @@
         $error = $e->getMessage();
         echo "Error:$error";
     }
-    ?>
+    */?>
 <p>Test</p>
 </main>
 <footer>
