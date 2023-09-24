@@ -1,8 +1,3 @@
-<?php
-
-?>
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,7 +21,7 @@
     <?php
     $dsn = 'mysql:host=10.6.113.177;dbname=phpclass';
     $username = 'dbuser';
-    $password = 'dbdev123';
+    $password = 'dev123';
     $options = array(
             PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     );
