@@ -23,7 +23,7 @@
 <main>
     <h3>My Movie List</h3>
     <?php
-    $dsn = 'mysql:host=10.4.113.117;dbname=PHPclass';
+    $dsn = 'mysql:host=10.4.113.177;dbname=PHPclass';
     $username = 'dbuser';
     $password = 'dbdev123';
     $options = array(
