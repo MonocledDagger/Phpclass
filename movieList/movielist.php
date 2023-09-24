@@ -25,7 +25,7 @@
     <?php
     $dsn = 'mysql:host=10.4.113.117;dbname=phpclass';
     $username = 'dbuser';
-    $password = 'dev123';
+    $password = 'dbdev123';
     $options = array(
             PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     );
