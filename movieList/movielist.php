@@ -23,20 +23,24 @@
 <main>
     <h3>My Movie List</h3>
     <?php
-    $dsn = 'mysql:host=10.4.113.117;dbname=phpclass';
+    $dsn = 'mysql:host=10.4.113.117;dbname=PHPclass';
     $username = 'dbuser';
     $password = 'dbdev123';
     $options = array(
             PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     );
-
+    try{
     $db = new PDO($dsn, $username. $password, $options);
 
     $sql = $db->prepare("select * from movielist");
     $sql->execute();
     $row = $sql->fetch();
 
-    echo $row("MovieTitle");
+    echo $row("MovieTitle");}
+    catch (PDOException $e){
+        $error = $e->getMessage();
+        echo "Error:$error";
+    }
     ?>
 
 </main>
