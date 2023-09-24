@@ -28,6 +28,7 @@ elseif ($pRollOne == 4){
     $imgOne = "../images/DiceSix.png";
 }
 
+
 if ($pRollTwo == 1){
     $imgTwo = "../images/DiceOne.png";
 }
@@ -47,6 +48,63 @@ elseif ($pRollTwo == 4){
 }
 
 
+if ($cRollOne == 1){
+    $imgThree = "../images/DiceOne.png";
+}
+elseif ($cRollOne == 2){
+    $imgThree = "../images/DiceTwo.png";
+}
+
+elseif ($cRollOne == 3){
+    $imgThree = "../images/DiceThree.png";
+}
+elseif ($cRollOne == 4){
+    $imgThree = "../images/DiceFour.png";
+}elseif ($cRollOne == 5){
+    $imgThree = "../images/DiceFive.png";
+}else{
+    $imgThree = "../images/DiceSix.png";
+}
+
+
+if ($cRollTwo == 1){
+    $imgFour = "../images/DiceOne.png";
+}
+elseif ($cRollTwo == 2){
+    $imgFour = "../images/DiceTwo.png";
+}
+
+elseif ($cRollTwo == 3){
+    $imgFour = "../images/DiceThree.png";
+}
+elseif ($cRollTwo == 4){
+    $imgFour = "../images/DiceFour.png";
+}elseif ($cRollTwo == 5){
+    $imgFour = "../images/DiceFive.png";
+}else{
+    $imgFour = "../images/DiceSix.png";
+}
+
+
+if ($cRollThree == 1){
+    $imgFive = "../images/DiceOne.png";
+}
+elseif ($cRollThree == 2){
+    $imgFive = "../images/DiceTwo.png";
+}
+
+elseif ($cRollThree == 3){
+    $imgFive = "../images/DiceThree.png";
+}
+elseif ($cRollThree == 4){
+    $imgFive = "../images/DiceFour.png";
+}elseif ($cRollThree == 5){
+    $imgFive = "../images/DiceFive.png";
+}else{
+    $imgFive = "../images/DiceSix.png";
+}
+
+
 
 
 
@@ -60,8 +118,10 @@ $compResult = $cRollOne + $cRollTwo + $cRollThree;
 if ($playerResult > $compResult){
 
     $win = "You Won!";
-}else{
+}elseif($compResult > $playerResult){
     $win = "The Computer Won";
+}else{
+    $win = "A Tie? What are the odds?";
 }
 ?>
 
@@ -83,8 +143,18 @@ if ($playerResult > $compResult){
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
-    <img src="<?=$imgOne?>" alt="Dice Roll">
+    <h2>Your Rolls</h2>
+    <img src="<?=$imgOne?>" alt="Dice Roll"> <img src="<?=$imgTwo?>" alt="Dice Roll">
 
+    <h4> Your Total: <?=$playerResult?></h4>
+
+    <h2>Computer's Rolls</h2>
+
+    <img src="<?=$imgThree?>" alt="Dice Roll"> <img src="<?=$imgFour?>" alt="Dice Roll"> <img src="<?=$imgFive?>" alt="Dice Roll">
+
+    <h4> Computer's Total: <?=$compResult?> </h4>
+    <br>
+    <h2><?=$win?></h2>
 
 </main>
 <footer>
