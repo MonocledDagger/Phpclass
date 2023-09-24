@@ -42,7 +42,7 @@
         echo "Error:$error";
     }
     ?>
-
+<p>Test</p>
 </main>
 <footer>
     <?php include '../Includes/footer.php'?>
