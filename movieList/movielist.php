@@ -19,15 +19,12 @@
     <h3>My Movie List</h3>
 
     <?php
-
-$dsn = 'mysql:host=localhost;dbname=phpclass';
-$username = 'dbuser';
-$password = 'dbdev123';
-$options = array(
-    PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-);
-
-
+    $dsn = 'mysql:host=localhost;dbname=phpclass';
+    $username = 'dbuser';
+    $password = 'dbdev123';
+    $options = array(
+            PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    );
 
     try{
         $db = new PDO($dsn, $username, $password, $options);
@@ -36,7 +33,7 @@ $options = array(
         $sql->execute();
         $row = $sql->fetch();
 
-        /*while ($row!=null){
+        while ($row!=null){
             echo "<tr>";
             echo "<td>". $row["MovieID"] . "</td>";
             echo "<td>". $row["MovieTitle"] . "</td>";
@@ -44,8 +41,8 @@ $options = array(
             echo "</tr>";
 
 
-        }*/
-        echo $row["movieTitle"];
+        }
+
 
 
     } catch (PDOException $e) {
