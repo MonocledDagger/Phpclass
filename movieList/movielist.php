@@ -33,7 +33,7 @@
         $sql->execute();
         $row = $sql->fetch();
 
-        echo $row["MovieID"];
+
 
     } catch (PDOException $e) {
         echo "Error: ". $e->getMessage(); exit;
