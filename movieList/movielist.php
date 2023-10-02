@@ -16,27 +16,28 @@
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
-    <h3>My Movie List</h3
+    <h3>My Movie List</h3>
 
     <?php
-    $dsn = 'mysql:host=10.6.113.177;dbname=phpclass';
+    $dsn = 'mysql:host=localhost;dbname=phpclass';
     $username = 'dbuser';
-    $password = 'dev123';
-    $options = array(
+    $password = 'dbdev123';
+    $options = [
             PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    );
+    ];
+
     try{
-    $db = new PDO($dsn, $username. $password, $options);
+        $db = new PDO($dsn, $username, $password, $options);
 
-    $sql = $db->prepare("select * from movielist");
-    $sql->execute();
-    $row = $sql->fetch();
+        $sql = $db->prepare("select * from phpclass.movielist");
+        $sql->execute();
+        $row = $sql->fetch();
 
-    echo $row("MovieTitle");}
-    catch (PDOException $e){
-        $error = $e->getMessage();
-        echo "Error:$error";
+        echo $row("MovieTitle");
+    } catch (PDOException $e) {
+        echo "Error: ". $e->getMessage(); exit;
     }
+
     ?>
 <p>Test</p>
 </main>
