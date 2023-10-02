@@ -33,17 +33,7 @@
         $sql->execute();
         $row = $sql->fetch();
 
-        while ($row!=null){
-            echo "<tr>";
-            echo "<td>". $row["MovieID"] . "</td>";
-            echo "<td>". $row["MovieTitle"] . "</td>";
-            echo "<td>". $row["MovieRating"] . "</td>";
-            echo "</tr>";
-
-
-        }
-
-
+        echo $row["MovieID"];
 
     } catch (PDOException $e) {
         echo "Error: ". $e->getMessage(); exit;
