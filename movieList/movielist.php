@@ -35,9 +35,9 @@
 
         while ($row!=null){
             echo "<tr>";
-            echo "<td>". $row["movieID"] . "</td>";
-            echo "<td>". $row["movieTitle"] . "</td>";
-            echo "<td>". $row["movieRating"] . "</td>";
+            echo "<td>". $row("MovieID") . "</td>";
+            echo "<td>". $row("MovieTitle") . "</td>";
+            echo "<td>". $row("MovieRating") . "</td>";
             echo "</tr>";
 
             $row = $sql->fetch();
