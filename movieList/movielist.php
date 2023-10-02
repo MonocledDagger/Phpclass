@@ -22,9 +22,9 @@
     $dsn = 'mysql:host=localhost;dbname=phpclass';
     $username = 'dbuser';
     $password = 'dbdev123';
-    $options = [
+    $options = array(
             PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ];
+    );
 
     try{
         $db = new PDO($dsn, $username, $password, $options);
