@@ -18,6 +18,13 @@
 <main>
     <h3>My Movie List</h3>
 
+    <table border="1" width="80%" >
+        <tr>
+            <th>Key</th>
+            <th>Movie Title</th>
+            <th>Rating</th>
+        </tr>
+
     <?php
     include '../Includes/dbconn.php';
 
@@ -28,13 +35,31 @@
         $sql->execute();
         $row = $sql->fetch();
 
-        echo $row["MovieTitle"];
+        while ($row!=null){
+
+            echo "<tr>";
+            echo "<td>" . $row["MovieID"] . "</td>";
+            echo "<td>" . $row["MovieTitle"] . "</td>";
+            echo "<td>" . $row["MovieRating"] . "</td>";
+            echo "</tr>";
+
+
+            $row = $sql->fetch();
+        }
 
     } catch (PDOException $e) {
         echo "Error: ". $e->getMessage(); exit;
     }
 
     ?>
+
+
+
+
+    </table>
+    <br>
+    <br>
+    <a href="movieadd.php">Add New Movie</a>
 <p>Test</p>
 </main>
 <footer>
