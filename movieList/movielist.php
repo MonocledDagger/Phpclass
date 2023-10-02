@@ -29,9 +29,19 @@
     try{
         $db = new PDO($dsn, $username, $password, $options);
 
-        $sql = $db->prepare("select * from phpclass.movielist");
+        $sql = $db->prepare("select * from movielist");
         $sql->execute();
         $row = $sql->fetch();
+
+        while ($row!=null){
+            echo "<tr>";
+            echo "<td>". $row["movieID"] . "</td>";
+            echo "<td>". $row["movieTitle"] . "</td>";
+            echo "<td>". $row["movieRating"] . "</td>";
+            echo "</tr>";
+
+            $row = $sql->fetch();
+        }
 
         echo $row("MovieTitle");
     } catch (PDOException $e) {
