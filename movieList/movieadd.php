@@ -1,4 +1,35 @@
+<?php
 
+if(isset($_POST["txtTitle"])){
+    if(isset($_POST["txtRating"])) {
+
+        $title = $_POST["txtTitle"];
+        $rating = $_POST["txtRating"];
+
+        include '../Includes/dbconn.php';
+
+        try{
+            $db = new PDO($dsn, $username, $password, $options);
+
+            $sql = $db->prepare("insert into phpclass.movielist (MovieTitle,MovieRating) VALUE(:title, :rating)");
+            $sql->bindValue(":title", $title);
+            $sql->bindValue(":rating", $rating);
+            $sql->execute();
+
+
+
+
+        } catch (PDOException $e) {
+            echo "Error: ". $e->getMessage(); exit;
+        }
+
+        header("Location:movielist.php");
+    }
+
+}
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,28 +48,29 @@
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
+    <form method="post">
     <h3>Add New Movie</h3>
 
     <table border = "1" width="80%" height="100px">
-        <tr>
+        <tr height = "40">
             <th colspan="2">Add New Movie</th>
-            <td><input type="text"></td>
+
         </tr>
-        <tr>
+        <tr height ="40">
         <th>Movie Name</th>
-        <td><input type ="text"></td>
+        <td><input id="txtTitle" name="txtTitle" type ="text" size="50"></td>
         </tr>
 
-        <tr>
+        <tr height="40">
             <th>Movie Rating</th>
-            <td><input type="text"></td>
+            <td><input id ="txtRating" name="txtRating" type="text" size="50"></td>
         </tr>
 
-        <tr>
-            <th>Movie Rating</th>
+        <tr height="40">
             <td colspan="2"><input type="Submit" value="Add New Movie"></td>
         </tr>
     </table>
+    </form>
 </main>
 <footer>
     <?php include '../Includes/footer.php'?>
