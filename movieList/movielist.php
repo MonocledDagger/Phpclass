@@ -19,12 +19,7 @@
     <h3>My Movie List</h3>
 
     <?php
-    $dsn = 'mysql:host=localhost;dbname=phpclass';
-    $username = 'dbuser';
-    $password = 'dbdev123';
-    $options = array(
-            PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    );
+    include '../Includes/dbconn.php';
 
     try{
         $db = new PDO($dsn, $username, $password, $options);
@@ -33,7 +28,7 @@
         $sql->execute();
         $row = $sql->fetch();
 
-
+        echo $row["MovieTitle"];
 
     } catch (PDOException $e) {
         echo "Error: ". $e->getMessage(); exit;
