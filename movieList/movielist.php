@@ -29,7 +29,7 @@
     try{
         $db = new PDO($dsn, $username, $password, $options);
 
-        $sql = $db->prepare("select * from movielist");
+        $sql = $db->prepare("select * from phpclass.movielist");
         $sql->execute();
         $row = $sql->fetch();
 
