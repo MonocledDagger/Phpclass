@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jimmy's Homepage</title>
-    <link type="text/css" rel="stylesheet" href="../css/base2.css">
+    <link type="text/css" rel="stylesheet" href="../css/base3.css">
 </head>
 <body>
 <header>
@@ -39,7 +39,7 @@
 
             echo "<tr>";
             echo "<td>" . $row["MovieID"] . "</td>";
-            echo "<td>" . $row["MovieTitle"] . "</td>";
+            echo "<td><a href=movieupdate.php?id=>" . $row["MovieTitle"] . "</a></td>";
             echo "<td>" . $row["MovieRating"] . "</td>";
             echo "</tr>";
 
@@ -60,7 +60,7 @@
     <br>
     <br>
     <a href="movieadd.php">Add New Movie</a>
-<p>Test</p>
+
 </main>
 <footer>
     <?php include '../Includes/footer.php'?>
