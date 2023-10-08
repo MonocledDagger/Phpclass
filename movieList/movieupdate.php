@@ -2,23 +2,38 @@
 if(isset($_GET["id"]))
 {
     $id=$_GET["id"];
-    echo $id;
-    exit();
+    try{
+        $db = new PDO($dsn, $username, $password, $options);
+
+        $sql = $db->prepare("select * from movielist where movieID = :id");
+        $sql->bindValue(":id",$id);
+        $sql->execute();
+        $row = $sql->fetch();
+
+        $title = $row["movieTitle"];
+        $rating = $row["movieRating"];
+
+
+
+    } catch (PDOException $e) {
+        echo "Error: ". $e->getMessage(); exit;
+    }
+
 }else{
     header("Location:movielist.php");
 }
 if(isset($_POST["txtTitle"])){
-if(isset($_POST["txtRating"])) {
+    if(isset($_POST["txtRating"])) {
 
-$title = $_POST["txtTitle"];
-$rating = $_POST["txtRating"];
+        $title = $_POST["txtTitle"];
+        $rating = $_POST["txtRating"];
 
 include '../Includes/dbconn.php';
 
 try{
 $db = new PDO($dsn, $username, $password, $options);
 
-$sql = $db->prepare("insert into phpclass.movielist (MovieTitle,MovieRating) VALUE(:title, :rating)");
+$sql = $db->prepare("insert into phpclass.movielist (MovieTitle,MovieRating) VALUE(:title,:rating)");
 $sql->bindValue(":title", $title);
 $sql->bindValue(":rating", $rating);
 $sql->execute();
@@ -65,12 +80,12 @@ header("Location:movielist.php");
             </tr>
             <tr height ="40">
                 <th>Movie Name</th>
-                <td><input id="txtTitle" name="txtTitle" type ="text" size="50"></td>
+                <td><input id="txtTitle" name="txtTitle" type="text" size="50" value="<?=$title?>"></td>
             </tr>
 
             <tr height="40">
                 <th>Movie Rating</th>
-                <td><input id ="txtRating" name="txtRating" type="text" size="50"></td>
+                <td><input id ="txtRating" name="txtRating" type="text" size="50" value="<?=$rating?>"></td>
             </tr>
 
             <tr height="40">
