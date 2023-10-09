@@ -1,43 +1,25 @@
 <?php
-include '../includes/dbConn.php';
 
-if(isset($_GET["id"]))
-{
-    $id=$_GET["id"];
-    try{
-        $db = new PDO($dsn, $username, $password, $options);
-
-        $sql = $db->prepare("select * from movielist where movieID = :id");
-        $sql->bindValue(":id",$id);
-        $sql->execute();
-        $row = $sql->fetch();
-
-        $title = $row["movieTitle"];
-        $rating = $row["movieRating"];
+include '../Includes/dbconn.php';
 
 
-
-    } catch (PDOException $e) {
-        echo "Error: ". $e->getMessage(); exit;
-    }
-
-}else{
-    header("Location:movielist.php");
-}
 if(isset($_POST["txtTitle"])){
     if(isset($_POST["txtRating"])) {
 
         $title = $_POST["txtTitle"];
         $rating = $_POST["txtRating"];
+        $id = $_POST["txtID"];
 
-include '../Includes/dbconn.php';
+
 
 try{
 $db = new PDO($dsn, $username, $password, $options);
 
-$sql = $db->prepare("insert into phpclass.movielist (MovieTitle,MovieRating) VALUE(:title,:rating)");
+$sql = $db->prepare("update phpclass.movielist set MovieTitle = :title , MovieRating = :rating Where MovieID = :ID");
 $sql->bindValue(":title", $title);
 $sql->bindValue(":rating", $rating);
+$sql->bindValue(":ID", $id);
+
 $sql->execute();
 
 
@@ -51,7 +33,30 @@ header("Location:movielist.php");
 }
 
 }
+if(isset($_GET["id"]))
+{
 
+    $id=$_GET["id"];
+    try{
+        $db = new PDO($dsn, $username, $password, $options);
+
+        $sql = $db->prepare("select * from phpclass.movielist where MovieID = :ID");
+        $sql->bindValue(":ID",$id);
+        $sql->execute();
+        $row = $sql->fetch();
+
+        $title = $row["MovieTitle"];
+        $rating = $row["MovieRating"];
+
+
+
+    } catch (PDOException $e) {
+        echo "Error: ". $e->getMessage(); exit;
+    }
+
+}else{
+    header("Location:movielist.php");
+}
 
 ?>
 <!doctype html>
@@ -63,6 +68,15 @@ header("Location:movielist.php");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jimmy's Homepage</title>
     <link type="text/css" rel="stylesheet" href="../css/base3.css">
+
+    <script type="text/javascript">
+        function DeleteMovie(title,id){
+            if ((confirm("Do you want to delete" + title))){
+                document.location.href = "moviedelete.php?id=" + id;
+
+            }
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -77,7 +91,7 @@ header("Location:movielist.php");
 
         <table border = "1" width="80%" height="100px">
             <tr height = "40">
-                <th colspan="2">Add New Movie</th>
+                <th colspan="2">Update Movie</th>
 
             </tr>
             <tr height ="40">
@@ -91,9 +105,10 @@ header("Location:movielist.php");
             </tr>
 
             <tr height="40">
-                <td colspan="2"><input type="Submit" value="Add New Movie"></td>
+                <td colspan="2"><input type="Submit" value="Update Movie"> | <input type="button" onclick="DeleteMovie('<?=$title?>', <?=$id?>)" value="Delete Movie"></td>
             </tr>
         </table>
+        <input type="hidden" id="txtID" name="txtID" value="<?=$id?>">
     </form>
 </main>
 <footer>
