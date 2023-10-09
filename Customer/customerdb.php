@@ -43,7 +43,7 @@
 
             echo "<tr>";
             echo "<td>" . $row["CustomerID"] . "</td>";
-            echo "<td>" . $row["CustomerFirstName"] . "</td>";
+            echo "<td><a href=customerupdate.php?id=" .  $row["CustomerID"] . ">" . $row["CustomerFirstName"] . "</a></td>";
             echo "<td>" . $row["CustomerLastName"] . "</td>";
             echo "<td>" . $row["CustomerPhoneNumber"] . "</td>";
             echo "<td>" . $row["CustomerAddress"] . "</td>";
