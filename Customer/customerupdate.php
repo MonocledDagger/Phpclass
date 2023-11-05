@@ -1,16 +1,16 @@
 <?php
 include '../Includes/dbconn.php';
 
-if(isset($_POST["fname"])) {
-    if(isset($_POST["lname"])) {
-        if(isset($_POST["phone"])) {
-            if(isset($_POST["Address"])) {
+if(isset($_GET["fname"])) {
+    if(isset($_GET["lname"])) {
+        if(isset($_GET["phone"])) {
+            if(isset($_GET["Address"])) {
 
-                $fname = $_POST["fname"];
-                $lname = $_POST["lname"];
-                $phone = $_POST["phone"];
-                $address = $_POST["Address"];
-                $id = $_POST["ID"];
+                $fname = $_GET["fname"];
+                $lname = $_GET["lname"];
+                $phone = $_GET["phone"];
+                $address = $_GET["Address"];
+                $id = $_GET["ID"];
 
                 try {
                     $db = new PDO($dsn, $username, $password, $options);
@@ -67,7 +67,7 @@ if(isset($_GET["id"])) {
     <link type="text/css" rel="stylesheet" href="../css/base3.css">
 
     <script type="text/javascript">
-        function DeleteMovie(lname,id){
+        function DeleteCustomer(lname,id){
             if ((confirm("Do you want to delete" + lname))){
                 document.location.href = "customerdelete.php?id=" + id;
 
@@ -83,12 +83,12 @@ if(isset($_GET["id"])) {
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
-    <form method="post">
-        <h3>Add New Customer</h3>
+    <form method="GET">
+        <h3>Update Customer</h3>
 
         <table border = "1" width="80%" height="100px">
             <tr height = "40">
-                <th colspan="2">Add New Customer</th>
+                <th colspan="2">Update Customer</th>
 
             </tr>
             <tr height ="40">
@@ -112,10 +112,11 @@ if(isset($_GET["id"])) {
             </tr>
 
             <tr height="40">
-                <td colspan="2"><input type="Submit" value="Add New Customer">| <input type="button" onclick="DeleteMovie('<?=$lname?>', <?=$id?>)" value="Delete Customer"></td>
+                <td colspan="2"><input type="Submit" value="Update Customer">| <input type="button" onclick="DeleteCustomer('<?=$lname?>', '<?=$id?>')" value="Delete Customer"></td>
             </tr>
         </table>
     </form>
+
 </main>
 <footer>
     <?php include '../Includes/footer.php'?>

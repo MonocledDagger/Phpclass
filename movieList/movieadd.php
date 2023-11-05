@@ -23,7 +23,7 @@ if(isset($_POST["txtTitle"])){
             echo "Error: ". $e->getMessage(); exit;
         }
 
-        header("Location:movielist.php");
+        header("Location:customerlist.php");
     }
 
 }

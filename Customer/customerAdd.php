@@ -1,16 +1,16 @@
 <?php
 
-if(isset($_POST["fname"])){
-    if(isset($_POST["lname"])) {
-        if(isset($_POST["phone"])) {
-            if(isset($_POST["Address"])) {
+if(isset($_GET["fname"])){
+    if(isset($_GET["lname"])) {
+        if(isset($_GET["phone"])) {
+            if(isset($_GET["Address"])) {
 
 
 
-                $fname = $_POST["fname"];
-                $lname = $_POST["lname"];
-                $phone = $_POST["phone"];
-                $address = $_POST["Address"];
+                $fname = $_GET["fname"];
+                $lname = $_GET["lname"];
+                $phone = $_GET["phone"];
+                $address = $_GET["Address"];
 
                 include '../Includes/dbconn.php';
 
@@ -57,7 +57,7 @@ if(isset($_POST["fname"])){
     <?php include '../Includes/nav.php' ?>
 </nav>
 <main>
-    <form method="post">
+    <form method="GET">
         <h3>Add New Customer</h3>
 
         <table border = "1" width="80%" height="100px">

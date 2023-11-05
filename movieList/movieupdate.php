@@ -29,13 +29,11 @@ $sql->execute();
 echo "Error: ". $e->getMessage(); exit;
 }
 
-header("Location:movielist.php");
+header("Location:customerlist.php");
 }
 
 }
-if(isset($_GET["id"]))
-{
-
+if(isset($_GET["id"])) {
     $id=$_GET["id"];
     try{
         $db = new PDO($dsn, $username, $password, $options);
@@ -55,7 +53,7 @@ if(isset($_GET["id"]))
     }
 
 }else{
-    header("Location:movielist.php");
+    header("Location:customerlist.php");
 }
 
 ?>
@@ -105,7 +103,7 @@ if(isset($_GET["id"]))
             </tr>
 
             <tr height="40">
-                <td colspan="2"><input type="Submit" value="Update Movie"> | <input type="button" onclick="DeleteMovie('<?=$title?>', <?=$id?>)" value="Delete Movie"></td>
+                <td colspan="2"><input type="Submit" value="Update Movie"> | <input type="button" onclick="DeleteMovie('<?=$title?>', '<?=$id?>')" value="Delete Movie"></td>
             </tr>
         </table>
         <input type="hidden" id="txtID" name="txtID" value="<?=$id?>">

@@ -37,7 +37,7 @@ do{
     for($i=1; $i<7;$i++){
         echo "<h$i>Hello Again</h$i>";
 
-    };
+    }
 
     echo "<br /> <br /><hr /> <br />";
 
